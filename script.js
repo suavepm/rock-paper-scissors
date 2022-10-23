@@ -11,4 +11,31 @@ function getComputerChoice() {
     return handOutput;
 }
 
-console.log(getComputerChoice());
+function playRound(playerSelection, computerSelection) {
+    playerSelection = prompt('Rock, Paper, or Scissors?');
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = getComputerChoice().toLowerCase();
+    if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return alert('You lose! Paper beats Rock.');
+    } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        return alert('Draw!');
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return alert('You win! Rock beats Scissors.');
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return alert('You lose! Paper beats Scissors.');
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        return alert('Draw!');
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return alert('You win! Paper beats Rock.');
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return alert('You lose! Rock beats Scissors.');
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        return alert('Draw!');
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return alert('You win! Scissors beats Paper.');
+    } else {
+        return alert('Invalid selection!');
+    }
+}
+
+playRound();
