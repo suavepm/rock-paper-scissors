@@ -60,9 +60,24 @@ function game() {
         playRound();
         replay = prompt('Play again?');
     } 
+
+    let finalResult;
+
+    if (playerScore > computerScore) {
+        finalResult = "win";
+    } else if (playerScore < computerScore) {
+        finalResult = "lose";
+    } else {
+        finalResult = "draw";
+    }
     
     if (replay === 'no') {
+
+        alert(`The final score is ${playerScore} | ${computerScore}. You ${finalResult}!`);
         alert('Thanks for playing!');
+        computerScore = 0;
+        playerScore = 0;
+        
     } else {
         alert('Invalid response!');
     }
