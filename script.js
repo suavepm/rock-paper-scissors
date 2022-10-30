@@ -13,6 +13,9 @@ function getComputerChoice() {
 
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
 
     playerSelection = prompt('Rock, Paper, or Scissors?');
@@ -22,16 +25,22 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         resultMsg = 'You lose! Paper beats Rock.';
+        computerScore++;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         resultMsg = 'You win! Rock beats Scissors.';
+        playerScore++;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         resultMsg = 'You lose! Paper beats Scissors.';
+        computerScore++;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         resultMsg = 'You win! Paper beats Rock.';
+        playerScore++;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         resultMsg = 'You lose! Rock beats Scissors.';
+        computerScore++;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         resultMsg = 'You win! Scissors beats Paper.';
+        playerScore++;
     } else if (playerSelection === computerSelection) {
         resultMsg = 'Draw!';
     } else {
