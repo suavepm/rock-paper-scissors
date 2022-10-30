@@ -15,6 +15,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
+    playerSelection = prompt('Rock, Paper, or Scissors?');
     playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice().toLowerCase();
     let resultMsg;
@@ -36,6 +37,30 @@ function playRound(playerSelection, computerSelection) {
     } else {
         resultMsg = 'Invalid selection!';
     }
-    return console.log(resultMsg);
+
+    return alert(resultMsg);
 }
+
+function game() {
+
+    playRound();
+    let replay = prompt('Play again?');
+    replay.toLowerCase();
+
+    while (replay === 'yes') {
+        playRound();
+        replay = prompt('Play again?');
+    } 
+    
+    if (replay === 'no') {
+        alert('Thanks for playing!');
+    } else {
+        alert('Invalid response!');
+    }
+
+} 
+
+game();
+
+
 
